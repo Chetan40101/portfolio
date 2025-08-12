@@ -1,16 +1,68 @@
+import React, { useState } from "react";
+import "./Projects.css"
+
 const Projects = () => {
+  const [showProjects, setShowProjects] = useState(false);
+
   return (
-    <div>
-      <h1 className="page-title">Projects</h1>
-      <div className="page-content">
-        <ul>
-          <li><strong>Inventory Management System</strong> – Built with Frappe and Python for warehouse operations.</li>
-          <li><strong>Attendance Tracker</strong> – A React and Node.js based app with punch-in/punch-out features.</li>
-          <li><strong>AI Data Plotter</strong> – A web app that takes user input and generates real-time charts.</li>
-          <li><strong>#NotSoOfficial Series</strong> – A fun Instagram Reels series capturing light moments at work.</li>
-        </ul>
-      </div>
-    </div>
+    <section id="projects" className="section">
+      <h2>Projects</h2>
+
+      <p
+        style={{ cursor: "pointer", userSelect: "none" }}
+        onClick={() => setShowProjects((prev) => !prev)}
+        title="Click to toggle projects"
+      >
+        Here you'll find some of my favorite projects, from websites to web
+        applications, all designed to solve problems and create impact.
+      </p>
+
+      {showProjects && (
+        <div className="projects-grid">
+          <button
+            className="project-button"
+            onClick={() => window.open("https://resplendent-concha-5d37f0.netlify.app", "_blank")}
+            title="Apple Clone"
+          >
+            Apple Clone
+          </button>
+
+          <button
+            className="project-button"
+            onClick={() => window.open("https://supplierfirst.ril.com", "_blank")}
+            title="SupplierFirst Portal"
+          >
+            SupplierFirst Portal
+          </button>
+
+          <button
+            className="project-button"
+            onClick={() => window.open("https://pncplatform.ril.com/jiocontracts", "_blank")}
+            title="Jio Contracts"
+          >
+            Jio Contracts
+          </button>
+
+          <button
+            className="project-button"
+            onClick={() => window.open("https://neipncdev.ril.com/warehousemanagement", "_blank")}
+            title="Warehouse Management"
+          >
+            Warehouse Management
+          </button>
+
+          <button
+            className="project-button"
+            onClick={() => window.open("https://neipncdev.ril.com/warehousemanagement", "_blank")}
+            title="Warehouse Management"
+          >
+            Warehouse Management
+          </button>
+
+          {/* Add more buttons here for other projects */}
+        </div>
+      )}
+    </section>
   );
 };
 

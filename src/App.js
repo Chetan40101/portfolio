@@ -1,16 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Optional: Persist theme in localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    if (savedTheme === "true") setDarkMode(true);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
+
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? "dark-mode" : ""}`}>
+      {/* Dark mode toggle button */}
+      <button
+        className="dark-mode-toggle"
+        onClick={() => setDarkMode((prev) => !prev)}
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+      >
+        {darkMode ? "🌙" : "☀️"}
+      </button>
+
       {/* HERO SECTION */}
       <header className="hero">
-        <img
-          src="/profile.jpg" // put your image in public/profile.jpg
-          alt="Profile"
-          className="profile-pic"
-        />
+        <div className="profile-pic-container">
+          <img src="/profile.jpg" alt="Profile" className="profile-pic" />
+        </div>
         <h1 className="hero-title">Robin.W</h1>
         <p className="hero-subtitle">Creative Developer & Designer</p>
       </header>
@@ -32,30 +55,9 @@ function App() {
       </div>
 
       {/* SECTIONS */}
-      <section id="about" className="section">
-        <h2>About Me</h2>
-        <p>
-          I'm Robin, a passionate developer who loves building elegant and
-          functional digital experiences. My work blends creativity with
-          precision, aiming for high-quality results in every project.
-        </p>
-      </section>
-
-      <section id="projects" className="section">
-        <h2>Projects</h2>
-        <p>
-          Here you'll find some of my favorite projects, from websites to web
-          applications, all designed to solve problems and create impact.
-        </p>
-      </section>
-
-      <section id="contact" className="section">
-        <h2>Contact</h2>
-        <p>
-          Want to work together or just say hello? Drop me a message — I’d love
-          to hear from you.
-        </p>
-      </section>
+      <About />
+      <Projects />
+      <Contact />
     </div>
   );
 }
