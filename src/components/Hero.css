@@ -1,0 +1,16 @@
+.hero {
+  background: linear-gradient(135deg, #5f2c82, #49a09d); /* purplish-blue gradient */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-img {
+  width: 120px; /* smaller */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}

@@ -1,38 +1,79 @@
-.App {
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+
+/* HERO */
+.hero {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-title {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* TILES SECTION */
+.tiles-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+  background: #f6f5fa; /* light background for contrast */
+}
+
+.tile {
+  background: linear-gradient(135deg, #a07be0, #cbb4ff);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* CONTENT SECTIONS */
+.section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  background: linear-gradient(135deg, #ede7f6, #f3e5f5);
+  border-radius: 15px;
+  margin-top: 40px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  color: #5b2ca1;
+  margin-bottom: 20px;
+}
+
+.section p {
+  color: #333;
+  line-height: 1.6;
 }
